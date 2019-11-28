@@ -1,0 +1,71 @@
+# 在線文檔地址：https://github.com/rime/home/wiki/RimeWithSchemata
+# 用戶對全局設定的定製信息，放置在用户设定目录
+# save it to:
+#   ~/.config/ibus/rime  (linux)
+#   ~/Library/Rime       (macos)
+#   %APPDATA%\Rime       (windows)
+#
+# RIME 输入方案集合： https://github.com/rime/plum
+# RIME 官方五笔码表： https://github.com/rime/rime-wubi
+
+patch:
+  # 输入法列表
+  schema_list:
+    # 參見：build目錄下的custom.yaml，默認自帶的輸入法有以下幾個：
+    # - schema: luna_pinyin              # 朙月拼音
+    - schema: luna_pinyin_simp         # 朙月拼音·简化字
+    #- schema: luna_pinyin_fluency      # 朙月拼音·語句流
+    #- schema: bopomofo                 # 注音
+    #- schema: bopomofo_tw              # 注音·臺灣正體
+    #- schema: cangjie5                 # 倉頡五代
+    #- schema: stroke                   # 五筆畫
+    #- schema: terra_pinyin             # 地球拼音
+    
+    ### 增加五笔拼音，需要下载官方五笔码表四个yaml文件放在用户设定目录
+    #- schema: wubi86                    # 五笔86
+    #- schema: wubi_pinyin               # 五笔拼音混合輸入
+    #- schema: wubi_trad                 # 五筆·簡入繁出
+
+    ### 增加极点五笔，来源 https://github.com/KyleBing/rime-wubi86-jidian，依赖 pinyin_simp
+    - schema: wubi86_jidian             # 极点五笔
+    - schema: wubi86_jidian_pinyin      # 极点拼音混输
+    - schema: wubi86_jidian_trad        # 极点简入繁出
+    # - schema: pinyin_simp             # 袖珍简化字拼音 (依赖项，可以不开启，但是要有字典文件)
+
+    
+    # Emoji表情
+    # - schema: emoji         # emoji表情
+
+  # 中西文切換鍵的默認設置寫在 default.yaml 裏面
+  # 以下的 default.custom.yaml 在全局範圍重定義該組快速鍵
+  #
+  # 可用的按鍵有 Caps_Lock, Shift_L, Shift_R, Control_L, control_R
+  # Mac 系統上的鼠鬚管不能區分左、右，因此只有對 Shift_L, Control_L 的設定起作用
+  #
+  # 已輸入編碼時按切換鍵，可以進一步設定輸入法中西文切換的形式。
+  # 可選的臨時切換策略有三：
+  # inline_ascii 在輸入法的臨時西文編輯區內輸入字母、數字、符號、空格等，回車上屏後自動復位到中文
+  # commit_text 已輸入的候選文字上屏並切換至西文輸入模式
+  # commit_code 已輸入的編碼字符上屏並切換至西文輸入模式
+  # 設爲 noop，屏蔽該切換鍵
+  #
+  # 如果要把 Caps Lock 設爲只改變字母的大小寫而不做中西文切換，可將 Caps_Lock 對應的切換方式設爲 noop
+  # 如果要以 Caps Lock 切換到西文模式，默認輸出小寫字母，請置 ascii_composer/good_old_caps_lock: false
+  # 如果要以 Caps Lock 切換到西文模式，默認輸出大寫字母，請使用以下設置：
+  ascii_composer/good_old_caps_lock: true
+  ascii_composer/switch_key:
+    Caps_Lock: commit_code
+    Shift_L: commit_code
+    Shift_R: commit_code
+    Control_L: noop
+    Control_R: noop
+
+  key_binder:
+    bindings:
+      #     - {accept: comma, send: 2, when: has_menu} #候选2 用逗号选择 （修改的时候不要多加或少加空格，跟前面的对齐就好了）
+      #     - {accept: period, send: 3, when: has_menu} #候选3 用句号选择
+      - {accept: semicolon, send: 2, when: has_menu} #候选2 用分号
+      - {accept: apostrophe, send: 3, when: has_menu} #候选3 用单引号
+      - {accept: bracketleft, send: Page_Up, when: paging}
+      - {accept: bracketright, send: Page_Down, when: has_menu}
+

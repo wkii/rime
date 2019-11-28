@@ -1,0 +1,58 @@
+patch:
+  us_keyboard_layout: true             # 键盘选项：应用美式键盘布局
+
+  # 样式配置
+  # 注：预设的配色方案及代码（指定为 style/color_scheme ），可选方案有以下这些：
+  #   冷漠 - apathy
+  #   碧水 - aqua
+  #   青天 - azure
+  #   简约白 - clean_white
+  #   暗堂 - dark_temple
+  #   浮尘 - dust
+  #   谷歌 - google
+  #   墨池 - ink
+  #   孤寺 - lost_temple
+  #   明月 - luna
+  #   沙漠夜 - mojave_dark
+  #   幽能 - psionics
+  #   純粹的本質 - purity_of_essence
+  #   純粹的形式 - purity_of_form
+  #   曬經石 - solarized_rock
+  #   星际我争霸 - starcraft
+  # 配色选择 
+  style:
+    color_scheme: mojave_dark          # 选择配色方案，可选见上方注释
+  
+  # 特定应用关闭中文输入法
+  app_options:
+    com.runningwithcrayons.Alfred:
+      ascii_mode: true
+    com.alfredapp.Alfred:
+      ascii_mode: true
+    com.apple.Spotlight:
+      ascii_mode: true
+    com.apple.Terminal:
+      ascii_mode: true
+      no_inline: true
+    com.apple.dt.Xcode:
+      ascii_mode: true
+    com.blacktree.Quicksilver:
+      ascii_mode: true
+    com.github.atom:
+      ascii_mode: true
+    com.googlecode.iterm2:
+      ascii_mode: true
+    com.macromates.TextMate.preview:
+      ascii_mode: true
+    com.microsoft.VSCode:
+      ascii_mode: true
+    com.sublimetext.2:
+      ascii_mode: true
+    org.gnu.Aquamacs:
+      ascii_mode: true
+    org.gnu.Emacs:
+      ascii_mode: true
+      no_inline: true
+    org.vim.MacVim:
+      ascii_mode: true
+      no_inline: true

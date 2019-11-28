@@ -1,0 +1,6 @@
+.DS_Store
+build/
+installation.yaml
+user.yaml
+sync/
+wubi86_jidian.userdb/
