@@ -1,0 +1,8 @@
+__patch:
+# Rx: emoji:customize:schema=wubi86_jidian_pinyin {
+  - patch/+:
+      __include: emoji_suggestion:/patch
+# }
+
+# 其它补丁修改内容
+patch:

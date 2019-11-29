@@ -33,8 +33,10 @@ patch:
     # - schema: pinyin_simp             # 袖珍简化字拼音 (依赖项，可以不开启，但是要有字典文件)
 
     
-    # Emoji表情
-    # - schema: emoji         # emoji表情
+    # Emoji表情，需要将其单独列为一个输入法，它做为一个补丁打入其它输入法中
+    # 将Emoji的表情yaml文件和opencc目录复制到用户设定目录，然后在对应的输入法custom.yaml中加入__path配置
+    # 见 wubi86_jidian_pinyin.custom.yaml
+    
 
   # 中西文切換鍵的默認設置寫在 default.yaml 裏面
   # 以下的 default.custom.yaml 在全局範圍重定義該組快速鍵
