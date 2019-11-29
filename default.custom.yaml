@@ -60,12 +60,19 @@ patch:
     Control_L: noop
     Control_R: noop
 
+  # 按键选词设定，参考：https://github.com/LEOYoon-Tsaw/Rime_collections/blob/master/Rime_description.md
+  # 如果要看默认值，删除下面这段，看看默认build出来的default.yaml就知道了
   key_binder:
     bindings:
       #     - {accept: comma, send: 2, when: has_menu} #候选2 用逗号选择 （修改的时候不要多加或少加空格，跟前面的对齐就好了）
       #     - {accept: period, send: 3, when: has_menu} #候选3 用句号选择
-      - {accept: semicolon, send: 2, when: has_menu} #候选2 用分号
-      - {accept: apostrophe, send: 3, when: has_menu} #候选3 用单引号
-      - {accept: bracketleft, send: Page_Up, when: paging}
-      - {accept: bracketright, send: Page_Down, when: has_menu}
+      - {accept: semicolon, send: 2, when: has_menu}               #分號選第二重碼
+      - {accept: apostrophe, send: 3, when: has_menu}              #引號選第三重碼
+      #- {accept: bracketleft, send: Page_Up, when: paging}       # 用[向前翻页
+      #- {accept: bracketright, send: Page_Down, when: has_menu}  # 用]向后翻页
+      - {accept: minus, send: Page_Up, when: has_menu}             # 使用“-”向前翻页，支持配置多个按键或按键组合
+      - {accept: equal, send: Page_Down, when: has_menu}           # 使用“=”向后翻页，支持配置多个按键或按键组合
+      - {accept: comma, send: Page_Up, when: paging}               # 使用“,”向后翻页，支持配置多个按键或按键组合
+      - {accept: period, send: Page_Down, when: has_menu}          # 使用“.”向后翻页，支持配置多个按键或按键组合
+
 
