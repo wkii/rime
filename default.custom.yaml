@@ -12,7 +12,7 @@ patch:
   # 输入法列表
   schema_list:
     # 參見：build目錄下的custom.yaml，默認自帶的輸入法有以下幾個：
-    # - schema: luna_pinyin              # 朙月拼音
+    - schema: luna_pinyin              # 朙月拼音
     - schema: luna_pinyin_simp         # 朙月拼音·简化字
     #- schema: luna_pinyin_fluency      # 朙月拼音·語句流
     #- schema: bopomofo                 # 注音
