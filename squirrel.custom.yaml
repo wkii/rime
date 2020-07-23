@@ -45,7 +45,7 @@ patch:
     com.macromates.TextMate.preview:
       ascii_mode: true
     com.microsoft.VSCode:
-      ascii_mode: true
+      ascii_mode: false
     com.sublimetext.2:
       ascii_mode: true
     org.gnu.Aquamacs:
